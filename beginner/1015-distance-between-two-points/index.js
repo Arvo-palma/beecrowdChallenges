@@ -8,7 +8,7 @@ const resolution = (lines) => {
   const [x2, y2] = p2.map(coord => parseFloat(coord));
   const distance = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
 
-  return distance.toFixed(4)
+  return distance.toFixed(4);
 }
 
 console.log(resolution(lines));
