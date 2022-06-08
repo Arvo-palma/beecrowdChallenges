@@ -1,4 +1,6 @@
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+const filePath = require("path").resolve(__dirname, "./dev/stdin");
+const input = require("fs").readFileSync(filePath, "utf8");
+// var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var monetaryValue = parseFloat(input);
 
 const billsAndCoins = [100.00, 50.00, 20.00, 10.00, 5.00, 2.00, 1.00, 0.50, 0.25, 0.10, 0.05, 0.01];
