@@ -1,0 +1,25 @@
+{
+  "name": "desafiosbeecrowd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/beginner/1000-hello-world!-index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arvo-palma/beecrowdChallenges.git"
+  },
+  "author": "Álvaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arvo-palma/beecrowdChallenges/issues"
+  },
+  "homepage": "https://github.com/Arvo-palma/beecrowdChallenges#readme",
+  "dependencies": {
+    "ts-node": "^10.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}
