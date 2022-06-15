@@ -1,2 +1,7 @@
-const filePath = require("path").resolve(__dirname, "./dev/stdin");
-const input = require("fs").readFileSync(filePath, "utf8");
+const resolution = () => {
+  for (let num = 2; num <= 100; num += 2) {
+    console.log(num);
+  }
+}
+
+resolution();
