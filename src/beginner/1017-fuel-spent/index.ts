@@ -3,9 +3,12 @@ const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const resolution = (lines) => {
-  const consumption = parseInt(lines[0]) / parseFloat(lines[1]);
-  return `${consumption.toFixed(3)} km/l`
+export const resolution = (lines: string[]) => {
+  const [hours, avgSpeed] = lines.map(value => parseInt(value));
+
+  const litters = (avgSpeed * hours) / 12;
+
+  return litters.toFixed(3);
 };
 
 console.log(resolution(lines));
