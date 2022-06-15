@@ -3,7 +3,7 @@ const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const resolution = (lines) => {
+export const resolution = (lines: string[]) => {
   const [line1, line2] = lines;
   const [_code1, amount1, price1] = line1.split(' ');
   const [_code2, amount2, price2] = line2.split(' ');

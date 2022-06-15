@@ -3,11 +3,10 @@ const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const resolution = (lines) => {
-  const [_firstName, salary, sold] = lines.map(line => parseFloat(line));
-  const TOTAL = salary + (sold * 0.15);
+export const resolution = (lines: string[]) => {
+  const [A, B] = lines.map((line) => parseInt(line));
 
-  return `TOTAL = R$ ${TOTAL.toFixed(2)}`
-}
+  return `SOMA = ${A + B}`;
+};
 
 console.log(resolution(lines));

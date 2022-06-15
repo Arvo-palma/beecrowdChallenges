@@ -3,11 +3,10 @@ const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const resolution = (lines) => {
-  const [A, B, C, D] = lines.map(line => parseInt(line));
-  const DIFERENCA = (A * B - C * D);
+export const resolution = (lines: string[]) => {
+  const [A, B] = lines.map((line) => parseInt(line));
 
-  return `DIFERENCA = ${DIFERENCA}`;
+  return `PROD = ${A * B}`;
 };
 
 console.log(resolution(lines));

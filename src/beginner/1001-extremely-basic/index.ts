@@ -3,10 +3,10 @@ const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const resolution = (lines) => {
-  const [A, B] = lines.map((line) => parseInt(line));
+export const resolution = (lines: string[]) => {
+  const [A, B] = lines.map(line => parseInt(line));
+  const X = A + B;
+  return `X = ${X}`;
+}
 
-  return `PROD = ${A * B}`;
-};
-
-console.log(resolution(lines));
+console.log((resolution(lines)));
