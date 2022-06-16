@@ -4,15 +4,15 @@ const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const prepareInput = (lines) => {
+const prepareInput = (lines: string[]) => {
   const stringValues = lines[0].split(' ');
   const numberValues = stringValues.map(value => parseFloat(value));
-  const [A, B, C] = numberValues.sort((a,b) => b-a);
+  const [A, B, C] = numberValues.sort((a, b) => b - a);
 
   return [A, B, C];
 };
 
-const formatAnswer = (conditions) => {
+const formatAnswer = (conditions: Array<{ message: string, status: boolean }>) => {
   if (conditions[0].status) {
     console.log(conditions[0].message);
   } else {
@@ -22,10 +22,10 @@ const formatAnswer = (conditions) => {
   }
 };
 
-const resolution = (lines) => {
+export const resolution = (lines: string[]) => {
   const [A, B, C] = prepareInput(lines);
   const conditions = [
-    {message: 'NAO FORMA TRIANGULO', status: (A >= B + C)},
+    { message: 'NAO FORMA TRIANGULO', status: (A >= B + C) },
     {
       message: 'TRIANGULO RETANGULO',
       status: (Math.pow(A, 2) === Math.pow(B, 2) + Math.pow(C, 2))
@@ -40,14 +40,15 @@ const resolution = (lines) => {
     },
     {
       message: 'TRIANGULO EQUILATERO',
-      status: (A === B && B === C)},
+      status: (A === B && B === C)
+    },
     {
       message: 'TRIANGULO ISOSCELES',
       status: (A !== B ? B === C : B !== C)
     }
   ];
 
-  return formatAnswer(conditions);  
+  return formatAnswer(conditions);
 };
 
 resolution(lines);

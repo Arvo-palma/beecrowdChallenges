@@ -3,7 +3,7 @@ const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var age = parseInt(input);
 
-const resolution = (days) => {
+export const resolution = (days: number) => {
   const conversionDays = [365, 30];
   const counter = [0, 0];
   let rest = days;
