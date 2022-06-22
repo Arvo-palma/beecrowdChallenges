@@ -2,15 +2,15 @@ const filePath = require("path").resolve(__dirname, "./dev/stdin");
 const input = require("fs").readFileSync(filePath, "utf8");
 
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
 
-const prepareInput = (lines) => {
+const prepareInput = (input: string) => {
+  const lines = input.split("\n");
   const salary = parseFloat(lines[0]);
   return salary;
 };
 
-const resolution = (lines) => {
-  const salary = prepareInput(lines);
+export const resolution = (input: string) => {
+  const salary = prepareInput(input);
   const taxAbove2000 = (salary - 2000) * 0.08;
   const taxAbove3000 = (salary - 3000) * 0.18 + 80; // 80 = 1000*0.08 Tax from last category
   const taxAbove4500 = (salary - 4500) * 0.28 + 350; // 350 = Tax from two earlier categories
@@ -26,8 +26,8 @@ const resolution = (lines) => {
     case 4:
       return `R$ ${taxAbove4500.toFixed(2)}`;
     default:
-      return 'Isento';
+      return "Isento";
   }
 };
 
-console.log(resolution(lines));
+console.log(resolution(input));
