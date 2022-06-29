@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/beginner/1000-hello-world!-index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
     "ts-node": "^10.8.1"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.3",
+    "jest": "^28.1.2",
+    "ts-jest": "^28.0.5",
     "typescript": "^4.7.3"
   }
 }
