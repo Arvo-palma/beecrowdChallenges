@@ -1,18 +1,18 @@
-import { resolution } from "../../src/beginner/1002-area-of-a-circle";
+import { resolution } from "../../src/beginner/1010-simple-calculate";
 import { samples } from "../types/samples";
 
 const samples = [
   {
-    input: "2.00",
-    output: "A=12.5664",
+    input: "12 1 5.30\n16 2 5.10",
+    output: "VALOR A PAGAR: R$ 15.50",
   },
   {
-    input: "100.64",
-    output: "A=31819.3103",
+    input: "13 2 15.30\n161 4 5.20",
+    output: "VALOR A PAGAR: R$ 51.40",
   },
   {
-    input: "150.00",
-    output: "A=70685.7750",
+    input: "1 1 15.10\n2 1 15.10",
+    output: "VALOR A PAGAR: R$ 30.20",
   },
 ];
 
@@ -24,6 +24,7 @@ describe("The resolution return", () => {
   });
   test("Returns right output", () => {
     samples.map((sample) => {
+      console.log(sample.input);
       expect(resolution(sample.input)).toBe(sample.output);
     });
   });

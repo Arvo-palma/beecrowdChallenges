@@ -1,11 +1,6 @@
 import { resolution } from "../../src/beginner/1001-extremely-basic";
+import { samples } from "../types/samples";
 
-type samples = [
-  {
-    input: string;
-    output: string;
-  }
-];
 const samples = [
   {
     input: "10\n9",

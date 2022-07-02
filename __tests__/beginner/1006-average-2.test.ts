@@ -1,18 +1,18 @@
-import { resolution } from "../../src/beginner/1002-area-of-a-circle";
+import { resolution } from "../../src/beginner/1006-average-2";
 import { samples } from "../types/samples";
 
 const samples = [
   {
-    input: "2.00",
-    output: "A=12.5664",
+    input: "5.0\n6.0\n7.0",
+    output: "MEDIA = 6.3",
   },
   {
-    input: "100.64",
-    output: "A=31819.3103",
+    input: "5.0\n10.0\n10.0",
+    output: "MEDIA = 9.0",
   },
   {
-    input: "150.00",
-    output: "A=70685.7750",
+    input: "10.0\n10.0\n5.0",
+    output: "MEDIA = 7.5",
   },
 ];
 
@@ -24,6 +24,7 @@ describe("The resolution return", () => {
   });
   test("Returns right output", () => {
     samples.map((sample) => {
+      console.log(sample.input);
       expect(resolution(sample.input)).toBe(sample.output);
     });
   });

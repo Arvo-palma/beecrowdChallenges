@@ -1,18 +1,18 @@
-import { resolution } from "../../src/beginner/1002-area-of-a-circle";
+import { resolution } from "../../src/beginner/1009-salary-with-bonus";
 import { samples } from "../types/samples";
 
 const samples = [
   {
-    input: "2.00",
-    output: "A=12.5664",
+    input: "JOAO\n500.00\n1230.30",
+    output: "TOTAL = R$ 684.54",
   },
   {
-    input: "100.64",
-    output: "A=31819.3103",
+    input: "PEDRO\n700.00\n0.00",
+    output: "TOTAL = R$ 700.00",
   },
   {
-    input: "150.00",
-    output: "A=70685.7750",
+    input: "MANGOJATA\n1700.00\n1230.50",
+    output: "TOTAL = R$ 1884.58",
   },
 ];
 
@@ -24,6 +24,7 @@ describe("The resolution return", () => {
   });
   test("Returns right output", () => {
     samples.map((sample) => {
+      console.log(sample.input);
       expect(resolution(sample.input)).toBe(sample.output);
     });
   });

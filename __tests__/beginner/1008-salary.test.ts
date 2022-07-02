@@ -1,18 +1,18 @@
-import { resolution } from "../../src/beginner/1002-area-of-a-circle";
+import { resolution } from "../../src/beginner/1008-salary";
 import { samples } from "../types/samples";
 
 const samples = [
   {
-    input: "2.00",
-    output: "A=12.5664",
+    input: "25\n100\n5.50",
+    output: "NUMBER = 25\nSALARY = U$ 550.00",
   },
   {
-    input: "100.64",
-    output: "A=31819.3103",
+    input: "1\n200\n20.50",
+    output: "NUMBER = 1\nSALARY = U$ 4100.00",
   },
   {
-    input: "150.00",
-    output: "A=70685.7750",
+    input: "6\n145\n15.55",
+    output: "NUMBER = 6\nSALARY = U$ 2254.75",
   },
 ];
 
@@ -24,6 +24,7 @@ describe("The resolution return", () => {
   });
   test("Returns right output", () => {
     samples.map((sample) => {
+      console.log(sample.input);
       expect(resolution(sample.input)).toBe(sample.output);
     });
   });

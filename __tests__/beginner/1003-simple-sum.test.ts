@@ -1,18 +1,18 @@
-import { resolution } from "../../src/beginner/1002-area-of-a-circle";
+import { resolution } from "../../src/beginner/1003-simple-sum";
 import { samples } from "../types/samples";
 
 const samples = [
   {
-    input: "2.00",
-    output: "A=12.5664",
+    input: "30\n10",
+    output: "SOMA = 40",
   },
   {
-    input: "100.64",
-    output: "A=31819.3103",
+    input: "-30\n10",
+    output: "SOMA = -20",
   },
   {
-    input: "150.00",
-    output: "A=70685.7750",
+    input: "0\n0",
+    output: "SOMA = 0",
   },
 ];
 
@@ -24,6 +24,7 @@ describe("The resolution return", () => {
   });
   test("Returns right output", () => {
     samples.map((sample) => {
+      console.log(sample.input);
       expect(resolution(sample.input)).toBe(sample.output);
     });
   });
