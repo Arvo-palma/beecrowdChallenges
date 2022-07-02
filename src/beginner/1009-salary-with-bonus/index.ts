@@ -1,13 +1,18 @@
 const filePath = require("path").resolve(__dirname, "./dev/stdin");
 const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
 
-export const resolution = (lines: string[]) => {
-  const [_firstName, salary, sold] = lines.map(line => parseFloat(line));
-  const TOTAL = salary + (sold * 0.15);
+const prepareInput = (input: string) => {
+  const lines = input.split("\n");
+  const values = lines.map((line) => parseFloat(line));
+  return values;
+};
 
-  return `TOTAL = R$ ${TOTAL.toFixed(2)}`
-}
+export const resolution = (input: string) => {
+  const [_firstName, salary, sold] = prepareInput(input);
+  const TOTAL = salary + sold * 0.15;
 
-console.log(resolution(lines));
+  return `TOTAL = R$ ${TOTAL.toFixed(2)}`;
+};
+
+console.log(resolution(input));

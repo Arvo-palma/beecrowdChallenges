@@ -1,3 +1,7 @@
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 
-console.log('Hello World!');
+export const resolution = () => {
+  console.log("Hello World!");
+};
+
+resolution();

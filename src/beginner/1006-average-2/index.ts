@@ -1,13 +1,18 @@
 const filePath = require("path").resolve(__dirname, "./dev/stdin");
 const input = require("fs").readFileSync(filePath, "utf8");
 // var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
 
-export const resolution = (lines: string[]) => {
-  const [A, B, C] = lines.map(line => parseFloat(line));
-  const MEDIA = ((A * 2) + (B * 3) + (C * 5)) / 10;
+const prepareInput = (input: string) => {
+  const lines = input.split("\n");
+  const values = lines.map((line) => parseFloat(line));
+  return values;
+};
 
-  return `MEDIA = ${MEDIA.toFixed(1)}`
-}
+export const resolution = (input: string) => {
+  const [A, B, C] = prepareInput(input);
+  const MEDIA = (A * 2 + B * 3 + C * 5) / 10;
 
-console.log(resolution(lines));
+  return `MEDIA = ${MEDIA.toFixed(1)}`;
+};
+
+console.log(resolution(input));
