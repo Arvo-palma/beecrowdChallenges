@@ -19,7 +19,7 @@ export const resolution = (input: string) => {
   for (let index = 0; index < values.length; index += 1) {
     result += `${bills[index]} nota(s) de R$ ${values[index]},00\n`;
   }
-  console.log(result.slice(0, -1));
+  return result.slice(0, -1);
 };
 
-resolution(input);
+console.log(resolution(input));
